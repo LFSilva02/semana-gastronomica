@@ -37,12 +37,11 @@ body {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 24px;
-  padding: 0 0 20px 0; /* apenas padding inferior */
+  padding: 0 0 20px 0;
   align-items: center;
   scroll-behavior: smooth;
   margin: 0;
 }
-
 
 .item {
   flex: 0 0 240px;
@@ -50,6 +49,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 .nome {
@@ -62,7 +62,6 @@ body {
 
 .card {
   width: 100%;
-  aspect-ratio: 3 / 4;
   background: rgba(0, 0, 0, 0.3);
   border: 2px solid #ffffff22;
   border-radius: 16px;
@@ -70,7 +69,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
 }
 
@@ -80,13 +80,24 @@ body {
 
 .card img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0;
+}
+
+.descricao {
+  font-size: 0.9rem;
+  color: #eee;
+  text-align: center;
+  padding: 10px;
+  line-height: 1.3;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 16px 16px;
+  width: 100%;
 }
 
 .data {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #ffcc00;
   font-weight: bold;
   margin-top: 8px;
@@ -95,7 +106,7 @@ body {
 
 @media (max-width: 768px) {
   .item {
-    flex: 0 0 80vw; /* ocupa 80% da largura da tela */
+    flex: 0 0 80vw;
     max-width: none;
   }
 }
