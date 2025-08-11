@@ -2,52 +2,124 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semana Tecnológica Gastronômica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Semana Tecnológica Gastronômica — Cardápio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <header class="topbar">
     <h1 class="titulo">
-      Semana Tecnológica Gastronômica <span>XIX Semana Tecnológica 2025</span>
+      Semana Tecnológica Gastronômica
+      <span>XIX Semana Tecnológica 2025</span>
     </h1>
-    <div class="carousel">
-      <div class="item">
-        <h2 class="nome">Red Bull</h2>
-        <div class="card">
-          <img src="imagens/redbull.png" alt="Red Bull" />
-          <p class="descricao">Uma dose de energia para animar sua semana! Disponível gratuitamente</p>
-        </div>
-        <p class="data">Segunda (22/09)</p>
-      </div>
+  </header>
 
-      <div class="item">
-        <h2 class="nome">Cup Noodles</h2>
-        <div class="card">
-          <img src="imagens/cupnoodles.png" alt="Cup Noodles" />
-          <p class="descricao">Delicioso e rápido, o Cup Noodles vai te acompanhar na Semana Tecnológica! Experimente os sabores disponíveis e o melhor? De graça!.</p>
+  <main class="menu">
+    <!-- Red Bull -->
+    <article class="menu-item">
+      <img class="foto" src="imagens/redbull.png" alt="Lata de Red Bull" />
+      <div class="conteudo">
+        <div class="linha-topo">
+          <h2 class="nome">Red Bull</h2>
+          <span class="selo gratis">GRÁTIS</span>
         </div>
-        <p class="data">Terça (23/09)</p>
+        <p class="descricao">
+          Uma dose de energia para animar sua semana.
+        </p>
+        <p class="detalhe">
+          Segunda
+        </p>
       </div>
+    </article>
 
-      <div class="item">
-        <h2 class="nome">Sorvete</h2>
-        <div class="card">
-          <img src="imagens/sorvete.png" alt="Sorvete" />
-          <p class="descricao">Picolés para refrescar sua noite, sem pagar nada!. Pegue o seu no ...!</p>
+    <!-- Cup Noodles -->
+    <article class="menu-item">
+      <img class="foto" src="imagens/cupnoodles.png" alt="Copo de Cup Noodles" />
+      <div class="conteudo">
+        <div class="linha-topo">
+          <h2 class="nome">Cup Noodles</h2>
+          <span class="selo gratis">GRÁTIS</span>
         </div>
-        <p class="data">Quarta (24/09)</p>
+        <p class="descricao">
+          Quer desgustar um Cup Noodles? Vá até o stand da Nissin.
+        </p>
+        <p class="detalhe">
+          Segunda à Sexta
+        </p>
       </div>
+    </article>
 
-      <div class="item">
-        <h2 class="nome">Pastel</h2>
-        <div class="card">
-          <img src="imagens/pastel.png" alt="Pastel" />
-          <p class="descricao">Nada melhor que um pastelzinho quentinho para fechar a Semana Tecnológica 2025! .</p>
+    <!-- Sorvete -->
+    <article class="menu-item">
+      <img class="foto" src="imagens/sorvete.png" alt="Picolé" />
+      <div class="conteudo">
+        <div class="linha-topo">
+          <h2 class="nome">Sorvete (Picolé)</h2>
+          <span class="selo gratis">GRÁTIS</span>
         </div>
-        <p class="data">Quinta (25/09)</p>
+        <p class="descricao">
+          Vai um sorvete para refrescar sua noite? Retire o seu no stande da TCS.
+        </p>
+        <p class="detalhe">
+          Dia???
+        </p>
       </div>
-    </div>
-  </div>
+    </article>
+
+    <!-- Pastel -->
+    <article class="menu-item">
+      <img class="foto" src="imagens/pastel.png" alt="Pastel" />
+      <div class="conteudo">
+        <div class="linha-topo">
+          <h2 class="nome">Pastel</h2>
+          <span class="selo gratis">GRÁTIS</span>
+        </div>
+        <p class="descricao">
+          Clássico de evento! Retire seu voucher e peça o sabor preferido.
+        </p>
+        <p class="detalhe">
+          Sexta
+        </p>
+      </div>
+    </article>
+
+    <!-- Dog Prensado (novo) -->
+    <article class="menu-item">
+      <img class="foto" src="imagens/dogprensado.png" alt="Hot Dog Prensado" />
+      <div class="conteudo">
+        <div class="linha-topo">
+          <h2 class="nome">Dog Prensado</h2>
+          <span class="selo gratis">PAGO</span>
+        </div>
+        <p class="descricao">
+          Lanches deliciosos é com o Marcelo's Dog.
+        </p>
+        <p class="detalhe">
+          Segunda á Sexta
+        </p>
+      </div>
+    </article>
+
+    <!-- Churros (novo) -->
+    <article class="menu-item">
+      <img class="foto" src="imagens/churros.png" alt="Churros" />
+      <div class="conteudo">
+        <div class="linha-topo">
+          <h2 class="nome">Churros</h2>
+          <span class="selo gratis">PAGO</span>
+        </div>
+        <p class="descricao">
+          Churros quentinho e rechedado.
+        </p>
+        <p class="detalhe">
+          Segunda à sexta
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="rodape">
+    <p>Sujeito à disponibilidade.</p>
+  </footer>
 </body>
 </html>

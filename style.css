@@ -1,112 +1,151 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { height: 100%; }
 
 body {
-  height: 100vh;
-  overflow: hidden;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(90deg, #f88454, #1f125b);
-  color: #fff;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #1a1a1a;
+  background: radial-gradient(1200px 600px at 20% -10%, #ffffff20, transparent),
+              linear-gradient(90deg, #f88454, #1f125b);
+  background-attachment: fixed;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+/* Cabeçalho fixo */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(90deg, #1f125b, #3b2f8a);
+  color: #fff;
+  border-bottom: 1px solid #ffffff22;
 }
 
 .titulo {
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #fff;
+  padding: 14px 16px 10px;
+  line-height: 1.2;
+  font-size: clamp(1.05rem, 4.8vw, 1.4rem);
 }
 
 .titulo span {
-  font-size: 1rem;
-  color: #ffcc00;
   display: block;
-  margin-top: 5px;
+  font-size: clamp(0.75rem, 3.6vw, 0.95rem);
+  color: #ffcc00;
+  margin-top: 4px;
 }
 
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 24px;
-  padding: 0 0 20px 0;
-  align-items: center;
-  scroll-behavior: smooth;
-  margin: 0;
+/* Lista de cardápio */
+.menu {
+  padding: 12px 14px 20px;
+  display: grid;
+  gap: 12px;
 }
 
-.item {
-  flex: 0 0 240px;
-  scroll-snap-align: start;
+/* Item de cardápio */
+.menu-item {
+  display: grid;
+  grid-template-columns: 84px 1fr;        /* foto à esquerda, texto à direita */
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid #00000010;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  backdrop-filter: blur(2px);
+}
+
+/* Imagem pequena no estilo cardápio */
+.foto {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #0000000f;
+}
+
+/* Conteúdo textual */
+.conteudo {
+  min-width: 0; /* evita overflow do texto */
+  display: grid;
+  gap: 6px;
+}
+
+.linha-topo {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding-bottom: 20px;
+  gap: 8px;
+  justify-content: space-between;
 }
 
 .nome {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #fff;
-  text-align: center;
+  font-size: clamp(1rem, 4.5vw, 1.2rem);
+  font-weight: 800;
+  color: #1f125b;
+  letter-spacing: 0.2px;
 }
 
-.card {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  border: 2px solid #ffffff22;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
+.selo {
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid #00000012;
+  background: #fff;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 16px 16px 0 0;
+.selo.gratis {
+  background: #ffcc00;
+  color: #1a1a1a;
+  box-shadow: 0 2px 0 #e3b800;
 }
 
 .descricao {
-  font-size: 0.9rem;
-  color: #eee;
-  text-align: center;
-  padding: 10px;
+  font-size: clamp(0.86rem, 3.6vw, 0.95rem);
+  color: #333;
   line-height: 1.3;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 0 0 16px 16px;
-  width: 100%;
+
+  /* multi-line clamp */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+
+  /* especificação padrão (onde suportado) */
+  display: box;
+  box-orient: vertical;
+  line-clamp: 3;
+  overflow: hidden;
 }
 
-.data {
-  font-size: 1.3rem;
-  color: #ffcc00;
-  font-weight: bold;
-  margin-top: 8px;
+.detalhe {
+  font-size: 0.82rem;
+  color: #5c5c5c;
+}
+
+/* Rodapé leve */
+.rodape {
   text-align: center;
+  color: #eee;
+  font-size: 0.78rem;
+  padding: 8px 10px 14px;
 }
 
-@media (max-width: 768px) {
-  .item {
-    flex: 0 0 80vw;
-    max-width: none;
-  }
+/* Toques de acessibilidade (largura muito pequena) */
+@media (max-width: 360px) {
+  .menu-item { grid-template-columns: 76px 1fr; }
+  .foto { width: 76px; height: 76px; }
+  .descricao { -webkit-line-clamp: 2; line-clamp: 2; }
+}
+
+/* Se preferir cartões “bloco inteiro” (imagem em cima), basta usar esta classe no <main>: class="menu menu-blocos" */
+.menu.menu-blocos .menu-item {
+  grid-template-columns: 1fr;
+}
+.menu.menu-blocos .foto {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: #fff;
 }
